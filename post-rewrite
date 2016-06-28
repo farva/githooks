@@ -1,0 +1,14 @@
+#! /bin/sh
+
+echo "This is the input for 'post-rewrite':"
+while read line
+do
+    echo $line
+done
+
+case "$1" in
+    rebase)
+        echo "Now executing 'post-merge':"
+        exec git post-merge
+        ;;
+esac

@@ -1,0 +1,16 @@
+#! /bin/sh -x
+
+# set -e
+dir="`git rev-parse --git-dir`"
+# trap 'rm -f "$dir/$$.gtags"' EXIT
+# mkdir "$dir/$$.gtags"
+# gtags -q --gtagslabel pygments "$dir/../"
+# mv $dir/$$.gtags/* "$dir/.."
+# rmdir $dir/$$.gtags/
+
+for i in $@
+do
+    gtags -q --gtagslabel pygments --single-update $i "$dir/../"
+done
+
+
