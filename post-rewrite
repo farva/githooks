@@ -9,6 +9,6 @@ done
 case "$1" in
     rebase)
         echo "Now executing 'post-merge':"
-        exec git post-merge
+        exec .git/hooks/post-merge
         ;;
 esac
